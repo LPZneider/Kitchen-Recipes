@@ -3,6 +3,7 @@ import Boton from "./Boton";
 import { Form } from "./Form";
 import { ListRecipe } from "./ListRecipe";
 import { TableProvider } from "../context/CrudTableContext";
+import { ModalPortal } from "./ModalPortal";
 const Main = () => {
   return (
     <section className="main-recipes">
@@ -15,6 +16,7 @@ const Main = () => {
           <Form />
           <ListRecipe />
           <Boton />
+          <ModalPortal />
         </TableProvider>
       </article>
     </section>

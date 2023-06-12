@@ -1,18 +1,23 @@
 table {
   margin-top: 2rem;
-  display: block;
+  width: 100%;
   background-color: #ffffff;
+  border-collapse: collapse;
 
   thead {
     color: #6d6c6c;
-    display: block;
-    border-bottom: 1px solid #00000071;
+    font-size: 0.75rem;
+    font-weight: bold;
+
     tr {
-      display: flex;
-      justify-content: space-between;
-      td {
-        display: block;
-      }
     }
+    td {
+      border-bottom: 1px solid #79797a;
+      padding: 0 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  tbody {
   }
 }

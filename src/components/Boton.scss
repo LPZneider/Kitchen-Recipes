@@ -1,0 +1,25 @@
+.btn-add {
+  align-items: center;
+  background-color: #0c969d;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 1px 1px 15px #858585;
+
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 3.5rem;
+
+  font-weight: lighter;
+  height: 3.5rem;
+  justify-content: center;
+  position: absolute;
+  width: 3.5rem;
+
+  bottom: 3vh;
+  right: 1.5vw;
+
+  img {
+    height: 2.6rem;
+  }
+}

@@ -1,0 +1,18 @@
+table {
+  margin-top: 2rem;
+  display: block;
+  background-color: #ffffff;
+
+  thead {
+    color: #6d6c6c;
+    display: block;
+    border-bottom: 1px solid #00000071;
+    tr {
+      display: flex;
+      justify-content: space-between;
+      td {
+        display: block;
+      }
+    }
+  }
+}

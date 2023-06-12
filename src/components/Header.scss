@@ -1,0 +1,16 @@
+.header-recipes {
+  align-items: center;
+  display: flex;
+  height: 11vh;
+  width: 100%;
+  box-shadow: 1px 1px 5px #f9fafb;
+  a {
+    max-width: 100%;
+    width: 100%;
+
+    img {
+      max-height: 4rem;
+      margin-left: 1.5rem;
+    }
+  }
+}

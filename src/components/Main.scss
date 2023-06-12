@@ -1,0 +1,43 @@
+h1 {
+  font-size: 2rem;
+  font-weight: 550;
+  margin: 0;
+}
+// principal
+.main-recipes {
+  display: grid;
+  height: 89vh;
+  overflow: hidden;
+  grid-template-columns: 22% 1fr;
+}
+
+// imagen
+.img-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.img-recipes {
+  background-image: url("/src/assets/receta.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom-right-radius: 6rem;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+// main - form
+.form-recipes {
+  padding: 2rem 3rem;
+}
+@media (max-width: 935px) {
+  .main-recipes {
+    grid-template-columns: 100%;
+  }
+  .form-recipes {
+    padding: 1rem;
+  }
+}

@@ -4,8 +4,16 @@ const ModalContext = createContext();
 
 const ModalProviter = ({ children }) => {
   const [modal, setModal] = useState(false);
-  const handleModal = () => setModal(!modal);
-  const data = { modal, handleModal };
+
+  const handleModal = (e) => {
+    console.log(e.target);
+    setModal(!modal);
+  };
+
+  const handleClose = () => {
+    setModal(false);
+  };
+  const data = { modal, handleModal, handleClose };
   return <ModalContext.Provider value={data}>{children}</ModalContext.Provider>;
 };
 

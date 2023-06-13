@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./FormSearch.scss";
-import TableContext from "../context/CrudTableContext";
+import TableContext from "../../context/CrudTableContext";
 export const FormSearch = () => {
   const { handleSubmit } = useContext(TableContext);
   return (

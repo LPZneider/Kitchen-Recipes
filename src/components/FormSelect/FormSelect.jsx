@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./FormSelect.scss";
-import TableContext from "../context/CrudTableContext";
+import TableContext from "../../context/CrudTableContext";
 export const FormSelect = () => {
   const { handleClickRadio, handleActive, active, radiovalue } =
     useContext(TableContext);

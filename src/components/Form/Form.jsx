@@ -1,5 +1,5 @@
-import { FormSearch } from "./FormSearch";
-import { FormSelect } from "./FormSelect";
+import { FormSearch } from "../FormSearch/FormSearch";
+import { FormSelect } from "../FormSelect/FormSelect";
 import "./Form.scss";
 export const Form = () => {
   return (

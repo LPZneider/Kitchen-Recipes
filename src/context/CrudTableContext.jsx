@@ -25,12 +25,10 @@ const initialDb = [
     reviews: 4,
     cooked: false,
     ingredients: [
-      "1⅓ tazas de harina 0000",
-      "1 huevo",
-      "½ taza de agua (120 mililitros)",
-      "⅓ taza de aceite",
-      "⅓ taza de azúcar (66 gramos)",
       "30 gramos de frutos secos",
+      "⅓ taza de aceite",
+      "1⅓ tazas de harina",
+      "1 huevo",
     ],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
@@ -41,16 +39,9 @@ const initialDb = [
     name: "Receta de pastel",
     reviews: 4,
     cooked: true,
-    ingredients: [
-      "1⅓ tazas de harina 0000",
-      "1 huevo",
-      "½ taza de agua (120 mililitros)",
-      "⅓ taza de aceite",
-      "⅓ taza de azúcar (66 gramos)",
-      "30 gramos de frutos secos",
-    ],
+    ingredients: ["11⅓ tazas de harina"],
     preparation:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. N ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error. ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.on modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
     peso: 5,
   },
 ];

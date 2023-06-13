@@ -1,7 +1,7 @@
 import "./ListRecipe.scss";
 import { useContext } from "react";
-import TableContext from "../context/CrudTableContext";
-import { ListItem } from "./ListItem";
+import TableContext from "../../context/CrudTableContext";
+import { ListItem } from "../ListItem/ListItem";
 
 export const ListRecipe = () => {
   const { table } = useContext(TableContext);

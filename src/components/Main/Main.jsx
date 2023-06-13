@@ -1,11 +1,12 @@
 import "./Main.scss";
-import Boton from "./Boton";
-import { Form } from "./Form";
-import { ListRecipe } from "./ListRecipe";
-import { TableProvider } from "../context/CrudTableContext";
+import { Boton } from "../Boton";
+import { Form } from "../Form/";
+import { ListRecipe } from "../ListRecipe";
+import { TableProvider } from "../../context/CrudTableContext";
 import { useContext } from "react";
-import ModalContext from "../context/ModalContext";
-import { ModalPortal } from "./ModalPortal";
+import ModalContext from "../../context/ModalContext";
+import { ModalPortal } from "../ModalPortal/ModalPortal";
+import { FormItemCreate } from "../FormItemCreate";
 
 const Main = () => {
   const { modal } = useContext(ModalContext);
@@ -24,7 +25,7 @@ const Main = () => {
           <Boton />
           {modal && (
             <ModalPortal>
-              <h2>formulario</h2>
+              <FormItemCreate />
             </ModalPortal>
           )}
         </TableProvider>

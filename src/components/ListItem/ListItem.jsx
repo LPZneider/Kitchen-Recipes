@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import "./ListItem.scss";
-import { ModalPortal } from "./ModalPortal";
+import { ModalPortal } from "../ModalPortal/ModalPortal";
 import { useState } from "react";
 export const ListItem = ({
   el: { name, reviews, cooked, ingredients, preparation, peso },

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./Boton.scss";
-import ModalContext from "../context/ModalContext";
+import ModalContext from "../../context/ModalContext";
 
 const Boton = () => {
   const { handleModal } = useContext(ModalContext);

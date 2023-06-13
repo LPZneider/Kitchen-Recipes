@@ -7,10 +7,7 @@ const initialForm = {
   name: "",
   reviews: null,
   cooked: false,
-  ingredients: [
-    { id: idForm, name: "" },
-    { id: idForm + 2, name: "" },
-  ],
+  ingredients: [{ id: idForm, name: "" }],
   preparation: "",
   peso: null,
   id: null,
@@ -28,16 +25,31 @@ const FormProviter = ({ children }) => {
   };
 
   const handleCheckbox = (e) => {
-    e.target.value === "false"
-      ? (e.target.value = true)
-      : (e.target.value = false);
-
     setForms({
       ...forms,
-      [e.target.name]: e.target.value === "true",
+      [e.target.name]: e.target.checked,
     });
   };
-  const handleClickIngrendient = (e) => {};
+
+  const handleClickIngrendient = (e, id) => {
+    e.preventDefault();
+    console.log(e.target, e.target.value);
+
+    if (e.target.value === "agregar") {
+      setForms({
+        ...forms,
+        ingredients: [...forms.ingredients, { id: Date.now(), name: "" }],
+      });
+    } else {
+      const deleteitem = forms.ingredients.filter((item) => item.id !== id);
+      // console.log(deleteitem);
+      setForms({
+        ...forms,
+        ingredients: deleteitem,
+      });
+    }
+  };
+
   const handleIngredients = (e, id) => {
     const newIngredients = forms.ingredients.map((el) =>
       el.id === id ? { ...el, name: e.target.value } : el
@@ -48,7 +60,17 @@ const FormProviter = ({ children }) => {
     });
   };
 
-  const handleSubmitForm = () => {};
+  const handleSubmitForm = (e) => {
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+    console.log(formJson);
+
+    e.preventDefault();
+    forms.id = Date.now();
+    setForms(initialForm);
+    setDb([...db, { ...forms }]);
+  };
 
   const data = {
     handleChange,
@@ -56,6 +78,7 @@ const FormProviter = ({ children }) => {
     handleCheckbox,
     handleIngredients,
     handleClickIngrendient,
+    handleSubmitForm,
   };
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };

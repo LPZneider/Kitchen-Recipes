@@ -5,6 +5,7 @@ import { ListItem } from "../ListItem/ListItem";
 
 export const ListRecipe = () => {
   const { table } = useContext(TableContext);
+
   return (
     <table>
       <thead>

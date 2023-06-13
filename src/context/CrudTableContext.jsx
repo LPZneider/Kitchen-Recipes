@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 const TableContext = createContext();
 const initialDb = [
@@ -80,6 +80,9 @@ const TableProvider = ({ children }) => {
   const [db, setDb] = useState(initialDb);
   const [radiovalue, setRadiovalue] = useState("All");
   const [table, setTable] = useState(db);
+  useEffect(() => {
+    setTable([...db]);
+  }, [db]);
 
   const [active, setActive] = useState(false);
 
@@ -126,8 +129,10 @@ const TableProvider = ({ children }) => {
     active,
     handleActive,
     table,
+    setTable,
     db,
     setDb,
+
     handleSubmit,
   };
   return <TableContext.Provider value={data}>{children}</TableContext.Provider>;

@@ -7,6 +7,7 @@ import { useContext } from "react";
 import ModalContext from "../../context/ModalContext";
 import { ModalPortal } from "../ModalPortal/ModalPortal";
 import { FormItemCreate } from "../FormItemCreate";
+import { FormProviter } from "../../context/FormContext";
 
 const Main = () => {
   const { modal } = useContext(ModalContext);
@@ -20,14 +21,16 @@ const Main = () => {
         <h1>Kitchen Recipes</h1>
 
         <TableProvider>
-          <Form />
-          <ListRecipe />
-          <Boton />
-          {modal && (
-            <ModalPortal>
-              <FormItemCreate />
-            </ModalPortal>
-          )}
+          <FormProviter>
+            <Form />
+            <ListRecipe />
+            <Boton />
+            {modal && (
+              <ModalPortal>
+                <FormItemCreate />
+              </ModalPortal>
+            )}
+          </FormProviter>
         </TableProvider>
       </article>
     </section>

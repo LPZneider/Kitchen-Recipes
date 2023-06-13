@@ -5,10 +5,7 @@ const ModalContext = createContext();
 const ModalProviter = ({ children }) => {
   const [modal, setModal] = useState(false);
 
-  const handleModal = (e) => {
-    console.log(e.target);
-    setModal(!modal);
-  };
+  const handleModal = () => setModal(!modal);
 
   const handleClose = () => {
     setModal(false);

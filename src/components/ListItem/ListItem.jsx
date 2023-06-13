@@ -20,7 +20,7 @@ export const ListItem = ({
             <h3>Ingredients</h3>
             <ul>
               {ingredients.map((el, index) => (
-                <li key={index}>{el}</li>
+                <li key={index}>{el.name}</li>
               ))}
             </ul>
             <h3>Preparation</h3>

@@ -8,12 +8,30 @@ const initialDb = [
     reviews: 4,
     cooked: true,
     ingredients: [
-      "1⅓ tazas de harina 0000",
-      "1 huevo",
-      "½ taza de agua (120 mililitros)",
-      "⅓ taza de aceite",
-      "⅓ taza de azúcar (66 gramos)",
-      "30 gramos de frutos secos",
+      {
+        id: 6516515861,
+        name: "1⅓ tazas de harina 0000",
+      },
+      {
+        id: 61651654615,
+        name: "1 huevo",
+      },
+      {
+        id: 98974561,
+        name: "½ taza de agua (120 mililitros)",
+      },
+      {
+        id: 646518432655454,
+        name: "⅓ taza de aceite",
+      },
+      {
+        id: 987516421,
+        name: "⅓ taza de azúcar (66 gramos)",
+      },
+      {
+        id: 78945132245,
+        name: "30 gramos de frutos secos",
+      },
     ],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
@@ -25,10 +43,22 @@ const initialDb = [
     reviews: 4,
     cooked: false,
     ingredients: [
-      "30 gramos de frutos secos",
-      "⅓ taza de aceite",
-      "1⅓ tazas de harina",
-      "1 huevo",
+      {
+        id: 8745,
+        name: "30 gramos de frutos secos",
+      },
+      {
+        id: 842154515,
+        name: "⅓ taza de aceite",
+      },
+      {
+        id: 98567671,
+        name: "1⅓ tazas de harina",
+      },
+      {
+        id: 98667,
+        name: "1 huevo",
+      },
     ],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
@@ -39,7 +69,7 @@ const initialDb = [
     name: "Receta de pastel",
     reviews: 4,
     cooked: true,
-    ingredients: ["11⅓ tazas de harina"],
+    ingredients: [{ id: 811, name: "11⅓ tazas de harina" }],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. N ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error. ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.on modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
     peso: 5,
@@ -97,6 +127,7 @@ const TableProvider = ({ children }) => {
     handleActive,
     table,
     db,
+    setDb,
     handleSubmit,
   };
   return <TableContext.Provider value={data}>{children}</TableContext.Provider>;

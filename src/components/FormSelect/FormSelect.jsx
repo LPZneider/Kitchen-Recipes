@@ -15,15 +15,29 @@ export const FormSelect = () => {
         <div className="select-radios">
           <form onChange={handleClickRadio}>
             <label htmlFor="all">
-              All <input type="radio" name="category" id="all" value="all" />
+              All
+              <input
+                type="radio"
+                checked={radiovalue === "All"}
+                name="category"
+                id="all"
+                value="all"
+              />
             </label>
             <label htmlFor="active">
               Active{" "}
-              <input type="radio" name="category" id="active" value="active" />
+              <input
+                type="radio"
+                checked={radiovalue === "Active"}
+                name="category"
+                id="active"
+                value="active"
+              />
             </label>
             <label htmlFor="inactive">
               Inactive
               <input
+                checked={radiovalue === "Inactive"}
                 type="radio"
                 name="category"
                 id="inactive"

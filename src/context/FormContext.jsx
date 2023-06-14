@@ -9,7 +9,7 @@ const initialForm = {
   cooked: false,
   ingredients: [{ id: idForm, name: "" }],
   preparation: "",
-  peso: null,
+  peso: "",
   id: null,
 };
 
@@ -36,6 +36,7 @@ const FormProviter = ({ children }) => {
     console.log(e.target, e.target.value);
 
     if (e.target.value === "agregar") {
+      e.target.disabled = true;
       setForms({
         ...forms,
         ingredients: [...forms.ingredients, { id: Date.now(), name: "" }],

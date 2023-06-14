@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import ModalContext from "./ModalContext";
 const TableContext = createContext();
 const initialDb = [
   {
@@ -78,9 +79,11 @@ const initialDb = [
 
 const TableProvider = ({ children }) => {
   const [db, setDb] = useState(initialDb);
+  const { handleClose } = useContext(ModalContext);
   const [radiovalue, setRadiovalue] = useState("All");
   const [table, setTable] = useState(db);
   useEffect(() => {
+    handleClose(false);
     setTable([...db]);
   }, [db]);
 
@@ -117,6 +120,7 @@ const TableProvider = ({ children }) => {
       setTable([...inactiveDb]);
     }
     const capitalRadio = radio?.charAt(0).toUpperCase() + radio?.slice(1);
+
     setRadiovalue(capitalRadio);
     setTimeout(() => {
       setActive(!active);

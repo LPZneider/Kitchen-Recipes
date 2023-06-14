@@ -69,11 +69,11 @@ export const FormItemCreate = () => {
       </div>
       <h3>Peso</h3>
       <div>
-        <label htmlFor="peso">Peso: 123</label>
+        <label htmlFor="peso">Peso:</label>
         <input
           type="number"
-          id="peso"
           name="peso"
+          id="peso"
           value={forms.peso}
           onChange={handleChange}
         />

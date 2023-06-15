@@ -3,7 +3,7 @@ import { useContext } from "react";
 import FormContext from "../../context/FormContext";
 import "./FormItem.scss";
 
-const FormItem = ({ inpt }) => {
+const FormItem = ({ inpt: { id, name }, cant }) => {
   const { forms, handleIngredients, handleCreateItem, handleDeleteItem } =
     useContext(FormContext);
   return (
@@ -13,24 +13,20 @@ const FormItem = ({ inpt }) => {
           type="text"
           autoComplete="off"
           placeholder="Type ingredient"
-          id={inpt.id}
-          name={inpt.id}
-          value={inpt.name}
-          onChange={(e) => handleIngredients(e, inpt.id)}
+          id={id}
+          name={id}
+          value={name}
+          onChange={(e) => handleIngredients(e, id)}
         />
-        {forms.ingredients.length >= 1 ? (
+        {forms.ingredients.length !== cant + 1 ? (
+          <button value="eliminar" onClick={(e) => handleDeleteItem(e, id)}>
+            <img src="/src/assets/deleteItem.svg" alt="X" />
+          </button>
+        ) : (
           <button value="agregar" onClick={handleCreateItem}>
             <img src="/src/assets/addItem.svg" alt="+" />
           </button>
-        ) : null}
-        {forms.ingredients.length > 1 ? (
-          <button
-            value="eliminar"
-            onClick={(e) => handleDeleteItem(e, inpt.id)}
-          >
-            <img src="/src/assets/deleteItem.svg" alt="X" />
-          </button>
-        ) : null}
+        )}
       </section>
     </li>
   );
@@ -40,4 +36,5 @@ export default FormItem;
 
 FormItem.propTypes = {
   inpt: PropTypes.object,
+  cant: PropTypes.number,
 };

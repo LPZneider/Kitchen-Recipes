@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import "./ListItem.scss";
 import { ModalPortal } from "../ModalPortal/ModalPortal";
 import { useState } from "react";
+import { BotonActive } from "../BotonActive";
 export const ListItem = ({
   el: { name, reviews, cooked, ingredients, preparation, peso },
 }) => {
@@ -12,7 +13,9 @@ export const ListItem = ({
       <tr className="table-item" onClick={handleListModal}>
         <td>{name}</td>
         <td>{reviews}</td>
-        <td>{cooked ? "active" : "inactive"}</td>
+        <td>
+          <BotonActive />
+        </td>
         <td>{peso}</td>
         {listModal && (
           <ModalPortal>

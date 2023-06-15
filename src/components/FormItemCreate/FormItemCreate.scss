@@ -58,20 +58,6 @@
     }
   }
 
-  .form-ingredients {
-    ol li:last-child {
-      button[value="eliminar"] {
-        display: none;
-      }
-    }
-
-    ol li:not(:last-child) {
-      button[value="agregar"] {
-        display: none;
-      }
-    }
-  }
-
   .my-radio {
     appearance: none;
     background-color: #ffffff;

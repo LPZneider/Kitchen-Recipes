@@ -31,7 +31,7 @@ export const FormItemCreate = () => {
       <article className="form-ingredients">
         <ol>
           {forms.ingredients?.map((inpt, index) => (
-            <FormItem key={index} inpt={inpt} />
+            <FormItem key={index} inpt={inpt} cant={index} />
           ))}
         </ol>
       </article>

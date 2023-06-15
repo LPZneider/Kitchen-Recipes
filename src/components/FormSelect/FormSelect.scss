@@ -4,12 +4,15 @@
   button {
     cursor: pointer;
     border: none;
-    width: 14rem;
+    width: auto;
+    max-width: 14rem;
     display: flex;
     justify-content: space-between;
+    column-gap: 0.5rem;
     align-items: center;
     background-color: #eaeff2;
     padding: 1rem 1.5rem;
+    height: 3rem;
     margin: 0;
     border-radius: 1rem;
 
@@ -43,4 +46,29 @@
   box-shadow: 2px 2px 15px #a8a8a8;
   border-radius: 1rem;
   z-index: 5;
+}
+.my-radio {
+  appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  appearance: none;
+  border: 3px solid #ffffff;
+  outline: 1px solid #2b4e66;
+}
+.my-radio-active {
+  appearance: none;
+  background-color: #3c6c8d;
+  border-radius: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  appearance: none;
+  border: 2px solid #ffffff;
+  outline: 1px solid #3c6c8d;
+}
+.my-radio-active:hover {
+  background-color: #2b4e66;
+  outline: 1px solid #2b4e66;
 }

@@ -18,7 +18,9 @@ export const FormSelect = () => {
               All
               <input
                 type="radio"
-                checked={radiovalue === "All"}
+                className={
+                  radiovalue === "All" ? "my-radio-active" : "my-radio"
+                }
                 name="category"
                 id="all"
                 value="all"
@@ -28,7 +30,9 @@ export const FormSelect = () => {
               Active{" "}
               <input
                 type="radio"
-                checked={radiovalue === "Active"}
+                className={
+                  radiovalue === "Active" ? "my-radio-active" : "my-radio"
+                }
                 name="category"
                 id="active"
                 value="active"
@@ -37,7 +41,9 @@ export const FormSelect = () => {
             <label htmlFor="inactive">
               Inactive
               <input
-                checked={radiovalue === "Inactive"}
+                className={
+                  radiovalue === "Inactive" ? "my-radio-active" : "my-radio"
+                }
                 type="radio"
                 name="category"
                 id="inactive"

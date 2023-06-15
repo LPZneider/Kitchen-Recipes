@@ -34,15 +34,13 @@
       align-items: flex-end;
     }
   }
-
   .form-ingredients {
-    border: none;
-
-    input {
-      border: 1px solid #000;
+    ol li:not(:last-child) {
+      button[value="agregar"] {
+        display: none;
+      }
     }
   }
-
   .my-radio {
     appearance: none;
     appearance: none;

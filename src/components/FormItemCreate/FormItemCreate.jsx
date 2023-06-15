@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import FormContext from "../../context/FormContext";
 import "./FormItemCreate.scss";
+import FormItem from "../FormItem/FormItem";
 
 export const FormItemCreate = () => {
   const {
     handleChange,
     forms,
     handleCheckbox,
-    handleIngredients,
-    handleClickIngrendient,
+
     handleSubmitForm,
   } = useContext(FormContext);
   return (
@@ -28,37 +28,13 @@ export const FormItemCreate = () => {
         />
       </div>
       <h3>Ingredients</h3>
-      <div className="form-ingredients">
+      <article className="form-ingredients">
         <ol>
-          {forms.ingredients?.map((inpt) => (
-            <li key={inpt.id + 21}>
-              <input
-                key={inpt.id}
-                type="text"
-                autoComplete="off"
-                id={inpt.id}
-                name={inpt.id}
-                value={inpt.name}
-                onChange={(e) => handleIngredients(e, inpt.id)}
-              />
-              <button
-                key={inpt.id + 2}
-                value="agregar"
-                onClick={handleClickIngrendient}
-              >
-                +
-              </button>
-              <button
-                key={inpt.id + 69}
-                value="eliminar"
-                onClick={(e) => handleClickIngrendient(e, inpt.id)}
-              >
-                X
-              </button>
-            </li>
+          {forms.ingredients?.map((inpt, index) => (
+            <FormItem key={index} inpt={inpt} />
           ))}
         </ol>
-      </div>
+      </article>
       <h3>Preparation</h3>
       <div>
         <label htmlFor="preparation">Intructions*</label>

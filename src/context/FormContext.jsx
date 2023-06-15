@@ -31,24 +31,23 @@ const FormProviter = ({ children }) => {
     });
   };
 
-  const handleClickIngrendient = (e, id) => {
+  const handleCreateItem = (e) => {
     e.preventDefault();
-    console.log(e.target, e.target.value);
+    console.log(e.target);
+    setForms({
+      ...forms,
+      ingredients: [...forms.ingredients, { id: Date.now(), name: "" }],
+    });
+  };
 
-    if (e.target.value === "agregar") {
-      e.target.disabled = true;
-      setForms({
-        ...forms,
-        ingredients: [...forms.ingredients, { id: Date.now(), name: "" }],
-      });
-    } else {
-      const deleteitem = forms.ingredients.filter((item) => item.id !== id);
-      // console.log(deleteitem);
-      setForms({
-        ...forms,
-        ingredients: deleteitem,
-      });
-    }
+  const handleDeleteItem = (e, id) => {
+    e.preventDefault();
+    const deleteitem = forms.ingredients.filter((item) => item.id !== id);
+    // console.log(deleteitem);
+    setForms({
+      ...forms,
+      ingredients: deleteitem,
+    });
   };
 
   const handleIngredients = (e, id) => {
@@ -78,7 +77,8 @@ const FormProviter = ({ children }) => {
     forms,
     handleCheckbox,
     handleIngredients,
-    handleClickIngrendient,
+    handleDeleteItem,
+    handleCreateItem,
     handleSubmitForm,
   };
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;

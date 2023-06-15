@@ -1,0 +1,24 @@
+.item-ingredient {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  input {
+    border: 1px solid #54b5ba;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  button:disabled {
+    display: none;
+  }
+}

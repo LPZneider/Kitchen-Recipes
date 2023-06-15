@@ -15,7 +15,7 @@ export const FormItemCreate = () => {
     <form onSubmit={handleSubmitForm} className="form-create">
       <legend>New recipe</legend>
       <h3>Recipe name</h3>
-      <div>
+      <div className="div-input">
         <label htmlFor="name">Title*</label>
         <input
           type="text"
@@ -36,7 +36,7 @@ export const FormItemCreate = () => {
         </ol>
       </article>
       <h3>Preparation</h3>
-      <div>
+      <div className="div-input">
         <label htmlFor="preparation">Intructions*</label>
         <input
           type="text"
@@ -49,7 +49,7 @@ export const FormItemCreate = () => {
         />
       </div>
       <h3>Peso</h3>
-      <div>
+      <div className="div-input">
         <label htmlFor="peso">Peso:</label>
         <input
           type="number"
@@ -121,8 +121,9 @@ export const FormItemCreate = () => {
         checked={forms.cooked}
         onChange={handleCheckbox}
       />
-
-      <input type="submit" value="Create" />
+      <div className="div-submit">
+        <input type="submit" value="Create" />
+      </div>
     </form>
   );
 };

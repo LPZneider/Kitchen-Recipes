@@ -26,7 +26,7 @@ const Main = () => {
             <ListRecipe />
             <Boton />
             {modal && (
-              <ModalPortal>
+              <ModalPortal isForm={true}>
                 <FormItemCreate />
               </ModalPortal>
             )}

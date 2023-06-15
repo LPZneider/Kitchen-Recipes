@@ -12,11 +12,18 @@
 .modal-modal {
   overflow-y: auto;
   padding: 1.5rem;
-  width: 23rem;
   max-width: 100%;
   min-height: 100vh;
   background-color: #fff;
   animation: animacionIzquierda 0.5s ease-in-out;
+}
+
+.modal-form {
+  width: 23rem;
+}
+
+.modal-item {
+  width: 29rem;
 }
 @keyframes opacity-modal {
   0% {

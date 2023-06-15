@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import FormContext from "../../context/FormContext";
+import "./FormItemCreate.scss";
 
 export const FormItemCreate = () => {
   const {
@@ -11,7 +12,7 @@ export const FormItemCreate = () => {
     handleSubmitForm,
   } = useContext(FormContext);
   return (
-    <form onSubmit={handleSubmitForm}>
+    <form onSubmit={handleSubmitForm} className="form-create">
       <legend>New recipe</legend>
       <h3>Recipe name</h3>
       <div>
@@ -19,19 +20,22 @@ export const FormItemCreate = () => {
         <input
           type="text"
           id="name"
+          autoComplete="off"
+          placeholder="E.g. Slow cooker beef and rice hot pot"
           name="name"
           value={forms.name}
           onChange={handleChange}
         />
       </div>
-      <div>
-        <h3>Ingredients</h3>
+      <h3>Ingredients</h3>
+      <div className="form-ingredients">
         <ol>
           {forms.ingredients?.map((inpt) => (
             <li key={inpt.id + 21}>
               <input
                 key={inpt.id}
                 type="text"
+                autoComplete="off"
                 id={inpt.id}
                 name={inpt.id}
                 value={inpt.name}
@@ -62,6 +66,7 @@ export const FormItemCreate = () => {
           type="text"
           id="preparation"
           name="preparation"
+          autoComplete="off"
           placeholder="Write the sp eps"
           value={forms.preparation}
           onChange={handleChange}
@@ -75,43 +80,64 @@ export const FormItemCreate = () => {
           name="peso"
           id="peso"
           value={forms.peso}
+          autoComplete="off"
           onChange={handleChange}
         />
       </div>
-      <label htmlFor="reviews">Reviews</label>
-      <input
-        type="radio"
-        name="reviews"
-        id="1"
-        value="1"
-        checked={forms.reviews === "1"}
-        onChange={handleChange}
-      />
-      <input
-        type="radio"
-        name="reviews"
-        id="2"
-        value="2"
-        checked={forms.reviews === "2"}
-        onChange={handleChange}
-      />
-      <input
-        type="radio"
-        name="reviews"
-        id="3"
-        value="3"
-        checked={forms.reviews === "3"}
-        onChange={handleChange}
-      />
-      <input
-        type="radio"
-        name="reviews"
-        id="4"
-        value="4"
-        checked={forms.reviews === "4"}
-        onChange={handleChange}
-      />
+      <h3>Reviews</h3>
+      <section>
+        <label>
+          <input
+            type="radio"
+            name="reviews"
+            className={forms.reviews === "1" ? "my-radio-active" : "my-radio"}
+            id="1"
+            value="1"
+            checked={forms.reviews === "1"}
+            onChange={handleChange}
+          />{" "}
+          1
+        </label>
 
+        <label>
+          <input
+            type="radio"
+            name="reviews"
+            className={forms.reviews === "2" ? "my-radio-active" : "my-radio"}
+            id="2"
+            value="2"
+            checked={forms.reviews === "2"}
+            onChange={handleChange}
+          />
+          2
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="reviews"
+            className={forms.reviews === "3" ? "my-radio-active" : "my-radio"}
+            id="3"
+            value="3"
+            checked={forms.reviews === "3"}
+            onChange={handleChange}
+          />
+          3
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="reviews"
+            className={forms.reviews === "4" ? "my-radio-active" : "my-radio"}
+            id="4"
+            value="4"
+            checked={forms.reviews === "4"}
+            onChange={handleChange}
+          />
+          4
+        </label>
+      </section>
       <h3>Cooked before</h3>
       <input
         type="checkbox"

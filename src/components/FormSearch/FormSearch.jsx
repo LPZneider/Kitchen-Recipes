@@ -5,7 +5,9 @@ export const FormSearch = () => {
   const { handleSubmit } = useContext(TableContext);
   return (
     <form className="form-search" onSubmit={handleSubmit}>
-      <input type="submit" value="🔍" />
+      <button>
+        <img src="/src/assets/search.svg" alt="🔍" />
+      </button>
       <input
         autoComplete="off"
         className="input-search"

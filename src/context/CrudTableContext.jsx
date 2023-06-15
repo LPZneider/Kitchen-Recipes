@@ -97,7 +97,6 @@ const TableProvider = ({ children }) => {
     const dbSearch = db.filter((item) =>
       item.name.toLowerCase().includes(search.toLowerCase()) ? item : null
     );
-    console.log(dbSearch);
     setTable([...dbSearch]);
     form.reset();
   };

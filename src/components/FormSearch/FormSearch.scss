@@ -1,7 +1,14 @@
 .form-search {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
   border-radius: 1rem;
   overflow: hidden;
-  display: inline-block;
+
+  img {
+    width: 2rem;
+    height: auto;
+  }
 }
 
 .form-search input {
@@ -24,8 +31,11 @@
   }
 }
 
-.form-search input[type="submit"] {
+.form-search button {
+  margin: 0;
   padding-top: 0.6rem;
+  border: none;
+  background-color: #f9f9f9;
   cursor: pointer;
   font-size: 1.2rem;
 }

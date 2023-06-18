@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import "./ListItem.scss";
 import { ModalPortal } from "../ModalPortal/ModalPortal";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BotonActive } from "../BotonActive";
+import TableContext from "../../context/CrudTableContext";
 export const ListItem = ({
-  el: { name, reviews, cooked, ingredients, preparation, peso },
+  el: { name, reviews, cooked, ingredients, preparation, peso, id },
 }) => {
+  const { handleCheckboxCooked } = useContext(TableContext);
   const [listModal, setListModal] = useState(false);
   const handleListModal = () => setListModal(!listModal);
   return (
@@ -14,7 +16,11 @@ export const ListItem = ({
         <td>{name}</td>
         <td>{reviews}</td>
         <td>
-          <BotonActive />
+          <BotonActive
+            funActive={handleCheckboxCooked}
+            isChecked={cooked}
+            idElement={id}
+          />
         </td>
         <td>{peso}</td>
         {listModal && (
@@ -32,7 +38,11 @@ export const ListItem = ({
               <h3>Review</h3>
               {reviews}
               <h4>Copked before</h4>
-              {cooked}
+              <BotonActive
+                funActive={handleCheckboxCooked}
+                isChecked={cooked}
+                idElement={id}
+              />
               <div>
                 <input type="submit" value="Edit" />
               </div>

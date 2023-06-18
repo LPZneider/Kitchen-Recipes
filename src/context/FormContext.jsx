@@ -24,10 +24,10 @@ const FormProviter = ({ children }) => {
     });
   };
 
-  const handleCheckbox = (e) => {
+  const handleCheckbox = () => {
     setForms({
       ...forms,
-      [e.target.name]: e.target.checked,
+      cooked: !forms.cooked,
     });
   };
 

@@ -1,5 +1,6 @@
 .form-create {
   position: relative;
+
   legend {
     font-size: 1.6rem;
     font-weight: bold;
@@ -9,14 +10,32 @@
   h3 {
     font-size: 0.95rem;
   }
-
   .div-input {
-    padding: 0.5rem 0.5rem 1rem;
+    .textarea-recipe {
+      height: auto;
+    }
+    .preparation {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 2rem;
+      height: auto;
+      border: none;
+      margin-bottom: 0;
+    }
+    .preparation:hover {
+      outline: none;
+    }
+    padding: 0.5rem 0.5rem 0.5rem;
     border: 1px solid #54b5ba;
+    margin-bottom: 2.5rem;
     border-radius: 0.25rem;
-
+    h3 {
+      margin-bottom: 0;
+    }
     label {
       font-size: 0.8rem;
+      margin-bottom: 2rem;
     }
 
     input {
@@ -31,12 +50,16 @@
   input {
     border: none;
   }
+  .cooked {
+    margin-bottom: 2rem;
+  }
   .div-submit {
     display: flex;
     justify-content: flex-end;
   }
   input[type="submit"] {
     display: block;
+    margin-top: 2rem;
     bottom: 2vh;
     right: 2vw;
     padding: 0.65rem 2.1rem;
@@ -45,17 +68,6 @@
     font-size: 1.1rem;
     color: #fff;
     background-color: #0c969d;
-  }
-
-  section {
-    display: flex;
-    justify-content: space-around;
-
-    label {
-      display: flex;
-      column-gap: 0.25rem;
-      align-items: flex-end;
-    }
   }
 
   .my-radio {
@@ -80,5 +92,16 @@
       background-color: #2b4e66;
       outline: 1px solid #2b4e66;
     }
+  }
+}
+
+.radios-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2.5rem;
+  label {
+    display: flex;
+    column-gap: 0.25rem;
+    align-items: flex-end;
   }
 }

@@ -12,6 +12,7 @@
 }
 
 .content-input {
+  display: inline-block;
   position: relative;
   margin-top: -0.7rem;
   padding: 5px 0 5px 60px;
@@ -43,7 +44,7 @@
   left: 0px;
   top: 0px;
   bottom: 0;
-
+  transition: 0.5s;
   -webkit-box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
 }

@@ -103,6 +103,13 @@ const TableProvider = ({ children }) => {
 
   const handleActive = () => setActive(!active);
 
+  const handleCheckboxCooked = (e, id) => {
+    e.stopPropagation();
+    const activeDb = db.map((item) =>
+      item.id === id ? { ...item, cooked: !item.cooked } : item
+    );
+    setDb(activeDb);
+  };
   const handleClickRadio = (e) => {
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -127,6 +134,7 @@ const TableProvider = ({ children }) => {
   };
 
   const data = {
+    handleCheckboxCooked,
     radiovalue,
     handleClickRadio,
     active,

@@ -2,15 +2,11 @@ import { useContext } from "react";
 import FormContext from "../../context/FormContext";
 import "./FormItemCreate.scss";
 import FormItem from "../FormItem/FormItem";
+import { BotonActive } from "../BotonActive";
 
 export const FormItemCreate = () => {
-  const {
-    handleChange,
-    forms,
-    handleCheckbox,
-
-    handleSubmitForm,
-  } = useContext(FormContext);
+  const { handleChange, forms, handleCheckbox, handleSubmitForm } =
+    useContext(FormContext);
   return (
     <form onSubmit={handleSubmitForm} className="form-create">
       <legend>New recipe</legend>
@@ -36,15 +32,16 @@ export const FormItemCreate = () => {
         </ol>
       </article>
       <h3>Preparation</h3>
-      <div className="div-input">
+      <div className="div-input textarea-recipe">
         <label htmlFor="preparation">Intructions*</label>
-        <input
+        <textarea
           type="text"
           id="preparation"
           name="preparation"
           autoComplete="off"
           placeholder="Write the sp eps"
           value={forms.preparation}
+          className="preparation"
           onChange={handleChange}
         />
       </div>
@@ -61,7 +58,7 @@ export const FormItemCreate = () => {
         />
       </div>
       <h3>Reviews</h3>
-      <section>
+      <section className="radios-btn">
         <label>
           <input
             type="radio"
@@ -114,12 +111,12 @@ export const FormItemCreate = () => {
           4
         </label>
       </section>
-      <h3>Cooked before</h3>
-      <input
-        type="checkbox"
-        name="cooked"
-        checked={forms.cooked}
-        onChange={handleCheckbox}
+      <h3 className="cooked">Cooked before</h3>
+
+      <BotonActive
+        funActive={handleCheckbox}
+        isChecked={forms.cooked}
+        idElement={forms.id}
       />
       <div className="div-submit">
         <input type="submit" value="Create" />

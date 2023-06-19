@@ -6,7 +6,7 @@ const initialDb = [
   {
     id: 1,
     name: "Budin de frutos secos",
-    reviews: 4,
+    reviews: 2,
     cooked: true,
     ingredients: [
       {
@@ -36,12 +36,12 @@ const initialDb = [
     ],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
-    peso: 5,
+    peso: 521,
   },
   {
     id: 121,
     name: "Castañas asadas al microondas",
-    reviews: 4,
+    reviews: 3,
     cooked: false,
     ingredients: [
       {
@@ -63,7 +63,7 @@ const initialDb = [
     ],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
-    peso: 5,
+    peso: 758,
   },
   {
     id: 32,
@@ -73,7 +73,7 @@ const initialDb = [
     ingredients: [{ id: 811, name: "11⅓ tazas de harina" }],
     preparation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. N ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error. ipsum dolor sit amet consectetur adipisicing elit. Non modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.on modi porro aliquid, quae natus repudiandandae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.andae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.ae fugiat, ea at, molestias odio eum? Consectetur harum maiores nemo quo, voluptatem fuga quia error.",
-    peso: 5,
+    peso: 255,
   },
 ];
 

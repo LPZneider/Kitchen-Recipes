@@ -9,7 +9,7 @@ export const FormItemCreate = () => {
     useContext(FormContext);
   return (
     <form onSubmit={handleSubmitForm} className="form-create">
-      <legend>New recipe</legend>
+      <legend> {forms.id ? "Update" : "New"} recipe</legend>
       <h3>Recipe name</h3>
       <div className="div-input">
         <label htmlFor="name">Title*</label>
@@ -63,12 +63,12 @@ export const FormItemCreate = () => {
           <input
             type="radio"
             name="reviews"
-            className={forms.reviews === "1" ? "my-radio-active" : "my-radio"}
+            className={forms.reviews == 1 ? "my-radio-active" : "my-radio"}
             id="1"
-            value="1"
-            checked={forms.reviews === "1"}
+            value={1}
+            checked={forms.reviews == 1}
             onChange={handleChange}
-          />{" "}
+          />
           1
         </label>
 
@@ -76,10 +76,10 @@ export const FormItemCreate = () => {
           <input
             type="radio"
             name="reviews"
-            className={forms.reviews === "2" ? "my-radio-active" : "my-radio"}
+            className={forms.reviews == 2 ? "my-radio-active" : "my-radio"}
             id="2"
-            value="2"
-            checked={forms.reviews === "2"}
+            value={2}
+            checked={forms.reviews == 2}
             onChange={handleChange}
           />
           2
@@ -89,10 +89,10 @@ export const FormItemCreate = () => {
           <input
             type="radio"
             name="reviews"
-            className={forms.reviews === "3" ? "my-radio-active" : "my-radio"}
+            className={forms.reviews == 3 ? "my-radio-active" : "my-radio"}
             id="3"
-            value="3"
-            checked={forms.reviews === "3"}
+            value={3}
+            checked={forms.reviews == 3}
             onChange={handleChange}
           />
           3
@@ -102,10 +102,10 @@ export const FormItemCreate = () => {
           <input
             type="radio"
             name="reviews"
-            className={forms.reviews === "4" ? "my-radio-active" : "my-radio"}
+            className={forms.reviews == 4 ? "my-radio-active" : "my-radio"}
             id="4"
-            value="4"
-            checked={forms.reviews === "4"}
+            value={4}
+            checked={forms.reviews == 4}
             onChange={handleChange}
           />
           4
@@ -119,7 +119,7 @@ export const FormItemCreate = () => {
         idElement={forms.id}
       />
       <div className="div-submit">
-        <input type="submit" value="Create" />
+        <input type="submit" value={forms.id ? "Update" : "Create"} />
       </div>
     </form>
   );

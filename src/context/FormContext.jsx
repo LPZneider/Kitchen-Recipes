@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import TableContext from "./CrudTableContext";
+import ModalContext from "./ModalContext";
 const idForm = Date.now();
 const FormContext = createContext();
 const initialForm = {
@@ -16,7 +17,11 @@ const initialForm = {
 const FormProviter = ({ children }) => {
   const [forms, setForms] = useState(initialForm);
   const { db, setDb } = useContext(TableContext);
-
+  const { handleModal } = useContext(ModalContext);
+  const dataUpdate = (itemTabla) => {
+    setForms(itemTabla);
+    handleModal();
+  };
   const handleChange = (e) => {
     setForms({
       ...forms,
@@ -33,7 +38,6 @@ const FormProviter = ({ children }) => {
 
   const handleCreateItem = (e) => {
     e.preventDefault();
-    console.log(e.target);
     setForms({
       ...forms,
       ingredients: [...forms.ingredients, { id: Date.now(), name: "" }],
@@ -43,7 +47,6 @@ const FormProviter = ({ children }) => {
   const handleDeleteItem = (e, id) => {
     e.preventDefault();
     const deleteitem = forms.ingredients.filter((item) => item.id !== id);
-    // console.log(deleteitem);
     setForms({
       ...forms,
       ingredients: deleteitem,
@@ -61,18 +64,26 @@ const FormProviter = ({ children }) => {
   };
 
   const handleSubmitForm = (e) => {
+    e.preventDefault();
+
     const form = e.currentTarget;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson);
-
-    e.preventDefault();
-    forms.id = Date.now();
+    if (e.target.value === "Create") {
+      forms.id = Date.now();
+      setDb([...db, { ...forms }]);
+    } else {
+      const updateData = db.map((item) =>
+        item.id === forms.id ? forms : item
+      );
+      setDb(updateData);
+    }
     setForms(initialForm);
-    setDb([...db, { ...forms }]);
   };
 
   const data = {
+    dataUpdate,
     handleChange,
     forms,
     handleCheckbox,

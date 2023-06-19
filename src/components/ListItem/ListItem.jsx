@@ -1,20 +1,25 @@
 import PropTypes from "prop-types";
 import "./ListItem.scss";
-import { ModalPortal } from "../ModalPortal/ModalPortal";
+import { ModalPortal } from "../ModalPortal/";
 import { useContext, useState } from "react";
 import { BotonActive } from "../BotonActive";
 import TableContext from "../../context/CrudTableContext";
-export const ListItem = ({
-  el: { name, reviews, cooked, ingredients, preparation, peso, id },
-}) => {
+import { Reviews } from "../Reviews/";
+import FormContext from "../../context/FormContext";
+
+export const ListItem = ({ el }) => {
+  const { name, reviews, cooked, ingredients, preparation, peso, id } = el;
   const { handleCheckboxCooked } = useContext(TableContext);
+  const { dataUpdate } = useContext(FormContext);
   const [listModal, setListModal] = useState(false);
   const handleListModal = () => setListModal(!listModal);
   return (
     <>
       <tr className="table-item" onClick={handleListModal}>
         <td>{name}</td>
-        <td>{reviews}</td>
+        <td>
+          <Reviews review={reviews} />
+        </td>
         <td>
           <BotonActive
             funActive={handleCheckboxCooked}
@@ -36,7 +41,8 @@ export const ListItem = ({
               <h3>Preparation</h3>
               <p>{preparation}</p>
               <h3>Review</h3>
-              {reviews}
+              <Reviews review={reviews} />
+
               <h4>Copked before</h4>
               <BotonActive
                 funActive={handleCheckboxCooked}
@@ -44,7 +50,14 @@ export const ListItem = ({
                 idElement={id}
               />
               <div>
-                <input type="submit" value="Edit" />
+                <input
+                  type="submit"
+                  value="Edit"
+                  onClick={() => {
+                    handleListModal();
+                    dataUpdate(el);
+                  }}
+                />
               </div>
             </div>
           </ModalPortal>

@@ -5,8 +5,15 @@ import FormItem from "../FormItem/FormItem";
 import { BotonActive } from "../BotonActive";
 
 export const FormItemCreate = () => {
-  const { handleChange, forms, handleCheckbox, handleSubmitForm } =
-    useContext(FormContext);
+  const {
+    handleChange,
+    forms,
+    handleCheckbox,
+    handleSubmitForm,
+    handleValidations,
+    validations,
+  } = useContext(FormContext);
+
   return (
     <form onSubmit={handleSubmitForm} className="form-create">
       <legend> {forms.id ? "Update" : "New"} recipe</legend>
@@ -14,6 +21,8 @@ export const FormItemCreate = () => {
       <div className="div-input">
         <label htmlFor="name">Title*</label>
         <input
+          required
+          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
           type="text"
           id="name"
           autoComplete="off"
@@ -22,6 +31,9 @@ export const FormItemCreate = () => {
           value={forms.name}
           onChange={handleChange}
         />
+        {forms.name === "" && validations ? (
+          <p className="warning"> Name required</p>
+        ) : null}
       </div>
       <h3>Ingredients</h3>
       <article className="form-ingredients">
@@ -35,7 +47,8 @@ export const FormItemCreate = () => {
       <div className="div-input textarea-recipe">
         <label htmlFor="preparation">Intructions*</label>
         <textarea
-          type="text"
+          title="Your comment must be longer than 20 characters but not exceed 255 characters"
+          required
           id="preparation"
           name="preparation"
           autoComplete="off"
@@ -44,18 +57,28 @@ export const FormItemCreate = () => {
           className="preparation"
           onChange={handleChange}
         />
+        {forms.preparation === "" && validations ? (
+          <p className="warning">Instructions required</p>
+        ) : forms.preparation.length < 20 && validations ? (
+          <p className="warning">Minimum 20 characters</p>
+        ) : null}
       </div>
       <h3>Peso</h3>
       <div className="div-input">
         <label htmlFor="peso">Peso:</label>
         <input
+          required
           type="number"
+          title="This field is required"
           name="peso"
           id="peso"
           value={forms.peso}
           autoComplete="off"
           onChange={handleChange}
         />
+        {forms.peso === "" && validations ? (
+          <p className="warning">Peso required</p>
+        ) : null}
       </div>
       <h3>Reviews</h3>
       <section className="radios-btn">
@@ -71,7 +94,6 @@ export const FormItemCreate = () => {
           />
           1
         </label>
-
         <label>
           <input
             type="radio"
@@ -84,7 +106,6 @@ export const FormItemCreate = () => {
           />
           2
         </label>
-
         <label>
           <input
             type="radio"
@@ -97,7 +118,6 @@ export const FormItemCreate = () => {
           />
           3
         </label>
-
         <label>
           <input
             type="radio"
@@ -111,6 +131,9 @@ export const FormItemCreate = () => {
           4
         </label>
       </section>
+      {!forms.reviews && validations ? (
+        <p className="warning">Reviews required</p>
+      ) : null}
       <h3 className="cooked">Cooked before</h3>
 
       <BotonActive
@@ -119,7 +142,12 @@ export const FormItemCreate = () => {
         idElement={forms.id}
       />
       <div className="div-submit">
-        <input type="submit" value={forms.id ? "Update" : "Create"} />
+        <input
+          type="submit"
+          name="enviar"
+          value={forms.id ? "Update" : "Create"}
+          onClick={handleValidations}
+        />
       </div>
     </form>
   );

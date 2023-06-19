@@ -16,12 +16,15 @@ const initialForm = {
 
 const FormProviter = ({ children }) => {
   const [forms, setForms] = useState(initialForm);
+  const [validations, setValidations] = useState(false);
   const { db, setDb } = useContext(TableContext);
   const { handleModal } = useContext(ModalContext);
   const dataUpdate = (itemTabla) => {
     setForms(itemTabla);
     handleModal();
   };
+  const handleValidations = () => setValidations(true);
+
   const handleChange = (e) => {
     setForms({
       ...forms,
@@ -70,7 +73,9 @@ const FormProviter = ({ children }) => {
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson);
-    if (e.target.value === "Create") {
+    if (formJson.preparation.length < 20) return;
+    if (!forms.id) {
+      // console.log(e.target);
       forms.id = Date.now();
       setDb([...db, { ...forms }]);
     } else {
@@ -80,6 +85,7 @@ const FormProviter = ({ children }) => {
       setDb(updateData);
     }
     setForms(initialForm);
+    setValidations(false);
   };
 
   const data = {
@@ -91,6 +97,8 @@ const FormProviter = ({ children }) => {
     handleDeleteItem,
     handleCreateItem,
     handleSubmitForm,
+    handleValidations,
+    validations,
   };
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };

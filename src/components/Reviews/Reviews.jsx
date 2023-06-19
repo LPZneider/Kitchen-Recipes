@@ -5,9 +5,9 @@ const Reviews = ({ review }) => {
     <div className="reviews">
       {[...new Array(4)].map((item, index) => {
         return index < review ? (
-          <img src="/src/assets/starStuffed.svg" />
+          <img key={index} src="/src/assets/starStuffed.svg" />
         ) : (
-          <img src="/src/assets/starEmpty.svg" />
+          <img key={index} src="/src/assets/starEmpty.svg" />
         );
       })}
     </div>
@@ -17,5 +17,5 @@ const Reviews = ({ review }) => {
 export default Reviews;
 
 Reviews.propTypes = {
-  review: PropTypes.number,
+  review: PropTypes.string,
 };

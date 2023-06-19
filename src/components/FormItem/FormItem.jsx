@@ -10,6 +10,7 @@ const FormItem = ({ inpt: { id, name }, cant }) => {
     <li>
       <section className="item-ingredient">
         <input
+          required
           type="text"
           autoComplete="off"
           placeholder="Type ingredient"

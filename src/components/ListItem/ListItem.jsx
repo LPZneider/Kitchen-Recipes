@@ -16,9 +16,9 @@ export const ListItem = ({ el }) => {
   return (
     <>
       <tr className="table-item" onClick={handleListModal}>
-        <td>{name}</td>
+        <td>{name.split(" ").slice(0, 6).join(" ")}</td>
         <td>
-          <Reviews review={reviews} />
+          <Reviews review={String(reviews)} />
         </td>
         <td>
           <BotonActive
@@ -41,7 +41,7 @@ export const ListItem = ({ el }) => {
               <h3>Preparation</h3>
               <p>{preparation}</p>
               <h3>Review</h3>
-              <Reviews review={reviews} />
+              <Reviews review={String(reviews)} />
 
               <h4>Copked before</h4>
               <BotonActive

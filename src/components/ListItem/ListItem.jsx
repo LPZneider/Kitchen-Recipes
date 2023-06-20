@@ -49,7 +49,7 @@ export const ListItem = ({ el }) => {
                 isChecked={cooked}
                 idElement={id}
               />
-              <div>
+              <div className="recipe-item-div">
                 <input
                   type="submit"
                   value="Edit"

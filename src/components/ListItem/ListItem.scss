@@ -1,9 +1,11 @@
 .table-item {
-  font-size: 0.9rem;
   max-height: 2.52rem;
+
+  font-size: 0.9rem;
   td {
-    border-bottom: 1px solid #79797a13;
     padding: 0.7rem;
+
+    border-bottom: 1px solid #79797a13;
   }
   &:hover {
     background-color: #f9f9f9;
@@ -30,21 +32,24 @@
     margin: 3rem 0;
     color: #485161;
   }
-  div {
-    display: flex;
-    justify-content: flex-end;
-  }
   input[type="submit"] {
-    cursor: pointer;
-    border: none;
-    display: block;
     bottom: 2vh;
     right: 2vw;
+
+    display: block;
     padding: 0.65rem 2.1rem;
-    border-radius: 1.6rem;
+
     font-weight: bold;
     font-size: 1.1rem;
-    color: #fff;
+
+    border: none;
+    border-radius: 1.6rem;
     background-color: #0c969d;
+    color: #fff;
+    cursor: pointer;
   }
+}
+.recipe-item-div {
+  display: flex;
+  justify-content: flex-end;
 }

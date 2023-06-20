@@ -1,96 +1,107 @@
+input {
+  border: none;
+}
 .form-create {
   position: relative;
 
   legend {
-    font-size: 1.6rem;
-    font-weight: bold;
     margin-bottom: 3rem;
+
+    font-weight: bold;
+    font-size: 1.6rem;
   }
 
   h3 {
     font-size: 0.95rem;
   }
-  .div-input {
-    .textarea-recipe {
-      height: auto;
-    }
-    .preparation {
-      width: 100%;
-      min-width: 100%;
-      max-width: 100%;
-      min-height: 2rem;
-      height: auto;
-      border: none;
-      margin-bottom: 0;
-    }
-    .preparation:hover {
-      outline: none;
-    }
-    padding: 0.5rem 0.5rem 0.5rem;
-    border: 1px solid #54b5ba;
-    margin-bottom: 2.5rem;
-    border-radius: 0.25rem;
-    h3 {
-      margin-bottom: 0;
-    }
-    label {
-      font-size: 0.8rem;
-      margin-bottom: 2rem;
-    }
 
-    input {
-      width: 100%;
-
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-
-  input {
-    border: none;
-  }
-  .cooked {
-    margin-bottom: 2rem;
-  }
-  .div-submit {
-    display: flex;
-    justify-content: flex-end;
-  }
   input[type="submit"] {
-    display: block;
-    margin-top: 2rem;
     bottom: 2vh;
     right: 2vw;
+
+    display: block;
+    margin-top: 2rem;
     padding: 0.65rem 2.1rem;
-    border-radius: 1.6rem;
+
     font-weight: bold;
     font-size: 1.1rem;
     color: #fff;
+
+    border-radius: 1.6rem;
     background-color: #0c969d;
   }
+}
+.div-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+.my-radio-active {
+  width: 1.3rem;
+  height: 1.3rem;
 
-  .my-radio {
-    appearance: none;
-    background-color: #ffffff;
-    border-radius: 50%;
-    width: 1.3rem;
-    height: 1.3rem;
-    border: 5px solid #ffffff;
+  border: 3.5px solid #ffffff;
+  background-color: #3c6c8d;
+  border-radius: 50%;
+  outline: 1px solid #3c6c8d;
+
+  &:hover {
+    background-color: #2b4e66;
     outline: 1px solid #2b4e66;
   }
+}
+.cooked {
+  margin-bottom: 2rem;
+}
 
-  .my-radio-active {
-    background-color: #3c6c8d;
-    border-radius: 50%;
-    width: 1.3rem;
-    height: 1.3rem;
-    border: 3.5px solid #ffffff;
-    outline: 1px solid #3c6c8d;
+.my-radio {
+  width: 1.3rem;
+  height: 1.3rem;
 
-    &:hover {
-      background-color: #2b4e66;
-      outline: 1px solid #2b4e66;
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  outline: 1px solid #2b4e66;
+}
+
+.div-input {
+  padding: 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 2.5rem;
+
+  border: 1px solid #54b5ba;
+  border-radius: 0.25rem;
+
+  .textarea-recipe {
+    height: auto;
+  }
+  .preparation {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 2rem;
+    height: auto;
+    margin-bottom: 0;
+
+    border: none;
+  }
+
+  .preparation:hover {
+    outline: none;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+  label {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    width: 100%;
+
+    &:focus {
+      outline: none;
     }
   }
 }
@@ -102,14 +113,16 @@
   label {
     display: flex;
     column-gap: 0.25rem;
+
     align-items: flex-end;
   }
 }
 
 .warning {
-  font-size: 0.9rem;
-  padding: 2rem 0 1rem;
   margin: 0;
+  padding: 2rem 0 1rem;
+
+  font-size: 0.9rem;
   line-height: 0;
   color: #a70404;
   font-weight: 600;

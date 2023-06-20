@@ -1,9 +1,11 @@
 .form-main {
+  z-index: 1;
+
   display: flex;
-  align-items: start;
   column-gap: 1rem;
   margin-top: 3rem;
-  z-index: 999;
+
+  align-items: start;
 }
 
 @media (max-width: 1115px) {

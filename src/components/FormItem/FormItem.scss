@@ -1,21 +1,22 @@
 .item-ingredient {
-  display: flex;
-
-  justify-content: flex-start;
-  column-gap: 0.25rem;
   align-items: center;
+  column-gap: 0.25rem;
+  display: flex;
+  justify-content: flex-start;
   margin-bottom: 1rem;
+
   input {
     margin-left: 0.5rem;
-    border: 1px solid #54b5ba;
     padding: 0.5rem;
+
+    border: 1px solid #54b5ba;
     border-radius: 0.25rem;
   }
 
   button {
-    cursor: pointer;
-    background-color: #fff;
     border: none;
+    background-color: #fff;
+    cursor: pointer;
     img {
       width: 2rem;
       height: 2rem;

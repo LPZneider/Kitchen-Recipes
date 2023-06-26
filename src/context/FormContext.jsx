@@ -6,12 +6,12 @@ const idForm = Date.now();
 const FormContext = createContext();
 const initialForm = {
   name: "",
-  reviews: null,
+  reviews: 0,
   cooked: false,
   ingredients: [{ id: idForm, name: "" }],
   preparation: "",
   peso: "",
-  id: null,
+  id: 0,
 };
 
 const FormProviter = ({ children }) => {
@@ -23,6 +23,14 @@ const FormProviter = ({ children }) => {
     setForms(itemTabla);
     handleModal();
   };
+
+  const [listModal, setListModal] = useState(false);
+  const handleListModal = () => setListModal(!listModal);
+
+  const resetFormulario = () => {
+    setForms(initialForm);
+  };
+
   const handleValidations = () => setValidations(true);
 
   const handleChange = (e) => {
@@ -72,7 +80,6 @@ const FormProviter = ({ children }) => {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
     if (formJson.preparation.length < 20) return;
     if (!forms.id) {
       // console.log(e.target);
@@ -89,6 +96,8 @@ const FormProviter = ({ children }) => {
   };
 
   const data = {
+    listModal,
+    handleListModal,
     dataUpdate,
     handleChange,
     forms,
@@ -99,6 +108,7 @@ const FormProviter = ({ children }) => {
     handleSubmitForm,
     handleValidations,
     validations,
+    resetFormulario,
   };
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./ListItem.scss";
 import { ModalPortal } from "../ModalPortal/";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BotonActive } from "../BotonActive";
 import TableContext from "../../context/CrudTableContext";
 import { Reviews } from "../Reviews/";
@@ -10,9 +10,8 @@ import FormContext from "../../context/FormContext";
 export const ListItem = ({ el }) => {
   const { name, reviews, cooked, ingredients, preparation, peso, id } = el;
   const { handleCheckboxCooked } = useContext(TableContext);
-  const { dataUpdate } = useContext(FormContext);
-  const [listModal, setListModal] = useState(false);
-  const handleListModal = () => setListModal(!listModal);
+  const { dataUpdate, listModal, handleListModal } = useContext(FormContext);
+
   return (
     <>
       <tr className="table-item" onClick={handleListModal}>

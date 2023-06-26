@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./FormSelect.scss";
 import TableContext from "../../context/CrudTableContext";
+import arrow from "/src/assets/arrow.svg";
 export const FormSelect = () => {
   const { handleClickRadio, handleActive, active, radiovalue } =
     useContext(TableContext);
@@ -9,7 +10,7 @@ export const FormSelect = () => {
       <button onClick={handleActive}>
         Cooked before:
         <span>{radiovalue} </span>
-        <img src="/src/assets/arrow.svg" alt="arrow" />
+        <img src={arrow} alt="arrow" />
       </button>
       {active && (
         <div className="select-radios">

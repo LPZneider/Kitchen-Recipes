@@ -1,0 +1,18 @@
+.container-btn-close {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-close {
+  background-color: #fff;
+  border: none;
+  position: relative;
+  cursor: pointer;
+
+  img {
+    display: block;
+    top: 0;
+    right: 0;
+    width: 3rem;
+  }
+}

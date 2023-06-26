@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import FormContext from "../../context/FormContext";
 import "./FormItem.scss";
+import deleteItem from "/src/assets/deleteItem.svg";
+import addItem from "/src/assets/addItem.svg";
 
 const FormItem = ({ inpt: { id, name }, cant }) => {
   const { forms, handleIngredients, handleCreateItem, handleDeleteItem } =
@@ -21,11 +23,11 @@ const FormItem = ({ inpt: { id, name }, cant }) => {
         />
         {forms.ingredients.length !== cant + 1 ? (
           <button value="eliminar" onClick={(e) => handleDeleteItem(e, id)}>
-            <img src="/src/assets/deleteItem.svg" alt="X" />
+            <img src={deleteItem} alt="X" />
           </button>
         ) : (
           <button value="agregar" onClick={handleCreateItem}>
-            <img src="/src/assets/addItem.svg" alt="+" />
+            <img src={addItem} alt="+" />
           </button>
         )}
       </section>

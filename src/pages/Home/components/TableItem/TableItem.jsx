@@ -26,7 +26,7 @@ const TableItem = ({ el }) => {
             idElement={id}
           />
         </td>
-        <td>{peso}</td>
+        <td>{String(peso).split("").slice(0, 3).join("")}</td>
         {listModal && <ItemModal el={id} handleListModal={handleListModal} />}
       </tr>
     </>

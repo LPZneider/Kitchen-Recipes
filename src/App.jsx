@@ -1,14 +1,14 @@
 import "./App.css";
-import { Main } from "./components/Main";
-import { HeaderRecipe } from "./components/Header";
 import { ModalProviter } from "./context/ModalContext";
+import HeaderRecipe from "./pages/Home/HeaderRecipe/HeaderRecipe";
+import { MainRecipe } from "./pages/Home/MainRecipe";
 
 function App() {
   return (
     <>
       <HeaderRecipe />
       <ModalProviter>
-        <Main />
+        <MainRecipe />
       </ModalProviter>
     </>
   );

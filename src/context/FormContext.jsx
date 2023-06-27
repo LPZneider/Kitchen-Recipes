@@ -24,9 +24,6 @@ const FormProviter = ({ children }) => {
     handleModal();
   };
 
-  const [listModal, setListModal] = useState(false);
-  const handleListModal = () => setListModal(!listModal);
-
   const resetFormulario = () => {
     setForms(initialForm);
   };
@@ -96,8 +93,6 @@ const FormProviter = ({ children }) => {
   };
 
   const data = {
-    listModal,
-    handleListModal,
     dataUpdate,
     handleChange,
     forms,

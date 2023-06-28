@@ -32,6 +32,7 @@ table {
   }
 
   tbody {
+    background-color: #ffe6b811;
     display: block;
     width: 70vw;
     max-height: 45vh;
@@ -47,6 +48,52 @@ table {
       }
       td:first-child {
         flex-basis: 23rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 935px) {
+  table {
+    display: table;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+
+    thead {
+      display: table-header-group;
+      color: #6d6c6c;
+      font-size: 0.75rem;
+      font-weight: bold;
+
+      td {
+        border-bottom: 1px solid #79797a;
+        padding: 0 1rem;
+        padding-bottom: 1rem;
+      }
+      tr {
+        display: table-row;
+        justify-content: space-between;
+        width: 100%;
+        td {
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: auto;
+        }
+        td:first-child {
+          flex-basis: 23rem;
+        }
+      }
+    }
+
+    tbody {
+      display: table-row-group;
+      background-color: #ffe6b811;
+      max-height: 45vh;
+      overflow-y: auto;
+      tr {
+        display: table-row;
       }
     }
   }

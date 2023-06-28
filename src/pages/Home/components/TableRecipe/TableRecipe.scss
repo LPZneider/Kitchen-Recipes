@@ -58,22 +58,19 @@ table {
     display: none;
   }
   .scroll-mobile {
+    margin-top: 2rem;
     margin-top: 1rem;
-    height: 14rem;
+    height: 15rem;
     overflow-y: auto;
     table {
       display: table;
-      margin-top: 5rem;
       width: 100%;
       background-color: #ffffff;
       border-collapse: collapse;
 
       thead {
         display: table-header-group;
-        position: fixed;
-        z-index: 111;
-        padding-top: 1rem;
-        margin-top: -5rem;
+
         background-color: #fff;
         color: #6d6c6c;
         font-size: 0.75rem;

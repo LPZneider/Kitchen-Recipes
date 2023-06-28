@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 import "./TableItem.scss";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BotonActive } from "../../../../models/BotonActive";
 import TableContext from "../../../../context/CrudTableContext";
 import { Reviews } from "../../../../models/Reviews";
 import ItemModal from "../../../Modal/components/ItemModal/ItemModal";
+import FormContext from "../../../../context/FormContext";
 
 const TableItem = ({ el }) => {
   const { name, reviews, cooked, peso, id } = el;
   const { handleCheckboxCooked } = useContext(TableContext);
-  const [listModal, setListModal] = useState(false);
-  const handleListModal = () => setListModal(!listModal);
+  const { handleListModal, listModal } = useContext(FormContext);
 
   return (
     <>

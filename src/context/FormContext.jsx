@@ -19,8 +19,6 @@ const FormProviter = ({ children }) => {
   const [validations, setValidations] = useState(false);
   const { db, setDb } = useContext(TableContext);
   const { handleModal } = useContext(ModalContext);
-  const [listModal, setListModal] = useState(false);
-  const handleListModal = () => setListModal(!listModal);
 
   const dataUpdate = (itemTabla) => {
     setForms(itemTabla);
@@ -96,8 +94,6 @@ const FormProviter = ({ children }) => {
   };
 
   const data = {
-    handleListModal,
-    listModal,
     dataUpdate,
     handleChange,
     forms,

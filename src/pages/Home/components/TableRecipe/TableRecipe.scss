@@ -54,46 +54,59 @@ table {
 }
 
 @media (max-width: 935px) {
-  table {
-    display: table;
-    margin-top: 2rem;
-    width: 100%;
-    background-color: #ffffff;
-    border-collapse: collapse;
+  .scroll-mobile::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-mobile {
+    margin-top: 1rem;
+    height: 14rem;
+    overflow-y: auto;
+    table {
+      display: table;
+      margin-top: 5rem;
+      width: 100%;
+      background-color: #ffffff;
+      border-collapse: collapse;
 
-    thead {
-      display: table-header-group;
-      color: #6d6c6c;
-      font-size: 0.75rem;
-      font-weight: bold;
+      thead {
+        display: table-header-group;
+        position: fixed;
+        z-index: 111;
+        padding-top: 1rem;
+        margin-top: -5rem;
+        background-color: #fff;
+        color: #6d6c6c;
+        font-size: 0.75rem;
+        font-weight: bold;
 
-      td {
-        border-bottom: 1px solid #79797a;
-        padding: 0 1rem;
-        padding-bottom: 1rem;
-      }
-      tr {
-        display: table-row;
-        justify-content: space-between;
-        width: 100%;
         td {
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: auto;
+          border-bottom: 1px solid #79797a;
+          padding: 0 1rem;
+          padding-bottom: 1rem;
         }
-        td:first-child {
-          flex-basis: 23rem;
+        tr {
+          display: table-row;
+          justify-content: space-between;
+          width: 100%;
+          td {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+          }
+          td:first-child {
+            flex-basis: 23rem;
+          }
         }
       }
-    }
 
-    tbody {
-      display: table-row-group;
-      background-color: #ffe6b811;
-      max-height: 45vh;
-      overflow-y: auto;
-      tr {
-        display: table-row;
+      tbody {
+        display: table-row-group;
+        background-color: #ffe6b811;
+        height: 5rem;
+        overflow-y: auto;
+        tr {
+          display: table-row;
+        }
       }
     }
   }

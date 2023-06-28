@@ -7,21 +7,23 @@ const TableRecipe = () => {
   const { table } = useContext(TableContext);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <td>Recipe name</td>
-          <td>Reviews</td>
-          <td>Cooked before</td>
-          <td>Peso</td>
-        </tr>
-      </thead>
-      <tbody>
-        {table.map((el, index) => (
-          <TableItem key={index} el={el} />
-        ))}
-      </tbody>
-    </table>
+    <div className="scroll-mobile">
+      <table>
+        <thead>
+          <tr>
+            <td>Recipe name</td>
+            <td>Reviews</td>
+            <td>Cooked before</td>
+            <td>Peso</td>
+          </tr>
+        </thead>
+        <tbody>
+          {table.map((el, index) => (
+            <TableItem key={index} el={el} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 export default TableRecipe;

@@ -39,3 +39,8 @@
   cursor: pointer;
   font-size: 1.2rem;
 }
+@media (max-width: 935px) {
+  .input-search {
+    width: 80vw;
+  }
+}

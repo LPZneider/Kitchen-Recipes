@@ -19,7 +19,7 @@ const ItemModal = ({ el = 0, handleListModal }) => {
   const { name, reviews, cooked, ingredients, preparation, id } = itemTable[0];
 
   return (
-    <ModalPortal>
+    <ModalPortal funCloseModal={handleListModal}>
       <div className="recipe-item">
         <h2>{name}</h2>
         <h3>Ingredients</h3>

@@ -5,7 +5,7 @@ import ModalContext from "../../../context/ModalContext";
 import FormContext from "../../../context/FormContext";
 import BotonClose from "../../../models/BotonClose/BotonClose";
 
-export const ModalPortal = ({ children, isForm = false }) => {
+export const ModalPortal = ({ children, isForm = false, funCloseModal }) => {
   const handleClickModal = (e) => e.stopPropagation();
   const { handleClose } = useContext(ModalContext);
   const { resetFormulario } = useContext(FormContext);
@@ -21,7 +21,7 @@ export const ModalPortal = ({ children, isForm = false }) => {
         className={isForm ? "modal-modal modal-form" : "modal-modal modal-item"}
         onClick={handleClickModal}
       >
-        <BotonClose isForm={isForm} funcForm={handleClickPortal} />
+        <BotonClose funcForm={isForm ? handleClickPortal : funCloseModal} />
         {children}
       </div>
     </article>,

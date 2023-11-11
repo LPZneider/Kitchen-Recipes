@@ -13,10 +13,13 @@ const ItemModal = ({ el = 0, handleListModal }) => {
 
   const itemTable = [...table.filter((item) => item.id === el)];
 
+  const [infomationItem] = itemTable;
+
   console.log(itemTable);
   const { dataUpdate } = useContext(FormContext);
 
-  const { name, reviews, cooked, ingredients, preparation, id } = itemTable[0];
+  const { name, reviews, cooked, ingredients, preparation, id } =
+    infomationItem;
 
   return (
     <ModalPortal funCloseModal={handleListModal}>
@@ -45,7 +48,7 @@ const ItemModal = ({ el = 0, handleListModal }) => {
             value="Edit"
             onClick={() => {
               handleListModal();
-              dataUpdate(itemTable[0]);
+              dataUpdate(infomationItem);
             }}
           />
         </div>

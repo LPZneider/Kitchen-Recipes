@@ -31,10 +31,11 @@ const FormProviter = ({ children }) => {
 
   const handleValidations = () => setValidations(true);
 
-  const handleChange = (e) => {
+  const handleChange = ({ target }) => {
+    const {name, value} = target
     setForms({
       ...forms,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
